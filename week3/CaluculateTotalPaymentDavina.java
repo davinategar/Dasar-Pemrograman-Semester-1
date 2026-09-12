@@ -20,6 +20,6 @@ public class CaluculateTotalPaymentDavina {
         System.out.println("Transport Allownce  : Rp " + transportAllownce);
         System.out.println("Meal Allowance      : Rp " + mealAllowance);
         System.out.println("Perfomance Bonus    : Rp " + bonus);
-        System.out.println("Total Salary : Rp " + totalSalary);
+        System.out.println("Total Salary : Rp " + (int) totalSalary);
     }
 }
