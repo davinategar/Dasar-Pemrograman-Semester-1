@@ -144,3 +144,11 @@ The access is denied because isActiveStudent is false, so the program does not e
 `Access denied: student status does not meet the requirement`
 
 This shows the difference between first-level denial and second-level denial.
+
+# Assignment:
+
+## 1. Implement the flowchart you created in Exercise 2 of Week 6 for the bookstore discountsystem as a Java program. The program must use nested selection statements (Nested IF).Use logical operators where needed.
+
+**FlowChart:**
+
+
