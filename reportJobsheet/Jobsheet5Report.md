@@ -87,3 +87,60 @@ In `isStudent || isLecturer`, if `isStudent` is already true, `isLecturer` does 
 
 In `(isStudent || isLecturer) && !isBlocked`, if `isStudent || isLecturer` is false, `!isBlocked` does not need to be evaluated because the entire AND condition will already be false.
 
+## Experiment 3:
+
+![Experiment 3 Result](Ecperiment-3-result.png.png)
+
+## Answer:
+
+**1. Why is hasLecturerPermit || isLabAssistant placed inside the first IF?**
+
+It is placed inside the first if because the student must first be active and not sanctioned before checking their permission to access the laboratory. After passing the first requirements, the program checks whether the student has lecturer permission OR is a lab assistant.
+
+**2. Explain the function of the &&, ||, and ! operators in this program.**
+
+The `&&` operator means `AND`, so all connected conditions must be true. The `||` operator means `OR`, so at least one condition must be true. The `!` operator means `NOT`, which reverses a boolean value. In this program, `!isSanctioned` means the student must not be sanctioned.
+
+**3. Can the access requirement be written as a single condition?**
+
+Yes. The nested `if` can be written as a single condition:
+
+```
+if (isActiveStudent && !isSanctioned &&
+    (hasLecturerPermit || isLabAssistant)) {
+    System.out.println("Laboratory access granted");
+} else {
+    System.out.println("Access denied");
+}
+```
+
+The final access decision is the same, because the student must be active, not sanctioned, and either have lecturer permission or be a lab assistant.
+
+**4. What is the advantage of using Nested IF in this case, compared to a single IF, if the system needs to show different reasons for denial?**
+
+The advantage of using Nested IF is that the program can show different reasons for denial. For example, if the student is inactive or sanctioned, it displays:
+
+`Access denied: student status does not meet the requirement`
+
+If the student passes the first requirements but does not have lecturer permission or lab assistant status, it displays:
+
+`Access denied: lecturer permission or lab assistant status required`
+
+Therefore, Nested IF makes the reason for the denial clearer.
+
+**5. Create one input combination that causes access to be denied at the first level, and one that causes it to be denied at the second level.**
+
+```
+isActiveStudent = false
+isSanctioned = false
+hasLecturerPermit = true
+isLabAssistant = false
+```
+
+The access is denied because isActiveStudent is false, so the program does not enter the first if.
+
+**Output:**
+
+`Access denied: student status does not meet the requirement`
+
+This shows the difference between first-level denial and second-level denial.
