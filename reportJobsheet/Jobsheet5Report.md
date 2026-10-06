@@ -151,4 +151,148 @@ This shows the difference between first-level denial and second-level denial.
 
 **FlowChart:**
 
+![Assignment 1 FlowChart](FlowChart-Assignment1-Jobsheet6.drawio.png)
 
+**Source Code:**
+
+```
+// Source code is decompiled from a .class file using FernFlower decompiler (from Intellij IDEA).
+package week5;
+
+import java.util.Scanner;
+
+public class tugas1Assignment07 {
+   public tugas1Assignment07() {
+   }
+
+   public static void main(String[] var0) {
+      Scanner var1 = new Scanner(System.in);
+      double var4 = (double)250000.0F;
+      double var6 = (double)150000.0F;
+      double var8 = (double)75000.0F;
+      System.out.print("input the day: ");
+      String var10 = var1.nextLine();
+      System.out.print("what do you want to buy (dictionary/novel/other): ");
+      String var11 = var1.nextLine();
+      System.out.print("how much you want to buy: ");
+      int var12 = var1.nextInt();
+      double var2;
+      if (var10.equalsIgnoreCase("wednesday")) {
+         if (var11.equalsIgnoreCase("dictionary")) {
+            if (var12 > 2) {
+               var2 = var4 * (double)var12 * 0.88;
+            } else {
+               var2 = var4 * (double)var12 * 0.9;
+            }
+         } else if (var11.equalsIgnoreCase("novel")) {
+            if (var12 > 3) {
+               var2 = var6 * (double)var12 * 0.91;
+            } else {
+               var2 = var6 * (double)var12 * 0.92;
+            }
+         } else if (var12 > 3) {
+            var2 = var8 * (double)var12 * 0.95;
+         } else {
+            var2 = var8 * (double)var12;
+         }
+      } else if (var11.equalsIgnoreCase("dictionary")) {
+         var2 = var4 * (double)var12;
+      } else if (var11.equalsIgnoreCase("novel")) {
+         var2 = var6 * (double)var12;
+      } else {
+         var2 = var8 * (double)var12;
+      }
+
+      System.out.println("Total Payment: " + var2);
+   }
+}
+```
+**Result:**
+
+![Assignment 1 Result](Assignment-1-result.png.png)
+
+## 2. Write a Java program for a lab-assistant candidate selection system based on the followingrules:
+   * a. A student may take part in the selection if their status is active and they are notcurrently under academic sanction.
+   * b. If this requirement is met, the student must also meet the next requirement: a minimumgrade of 80 in Basic  Programming, or a programming competency certificate.
+   * c. If both requirements are met, the student will be called for an interview. The student isaccepted as an assistant if the interview score is at least 75.
+   * d. The program must show the reason if the student fails at any stage of the selection.
+   * e. Use nested selection and logical operators. Save the file as `Task2AssistantSelectionAttendanceNo.java`.
+
+**Source Code:**
+
+```
+package week5;
+
+import java.util.Scanner;
+
+public class tugas2SeleksiAsisten07 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        String studentStatus, subjectSanctions, competencyCerti;
+        double programmingGrade, interviewGrades;
+
+        System.out.println("Please honestly complete the following details for the practicum assistant selection process!");
+
+        System.out.print("\n1. Are you a student? (active / inactive): ");
+        studentStatus = sc.nextLine();
+
+        System.out.print("2. Are you currently subject to academic sanctions? (yes / no): ");
+        subjectSanctions = sc.nextLine();
+
+        if (studentStatus.equalsIgnoreCase("active")
+        && subjectSanctions.equalsIgnoreCase("no")) {
+            
+            System.out.print("3. Programming Fundamentals Grade: ");
+            programmingGrade = sc.nextDouble();
+
+            sc.nextLine();
+
+            System.out.print("4. Do you hold a programming competency certificate? (yes / no): ");
+            competencyCerti = sc.nextLine();
+
+            if (programmingGrade >= 80
+                || competencyCerti.equalsIgnoreCase("yes")) {
+
+                    System.out.println("Passed the 2nd selection.");
+                    System.out.println("You are called to attend an interview.");
+                
+
+                    System.out.print("\ninput your interview grades: ");
+                    interviewGrades = sc.nextDouble();
+
+                    if (interviewGrades >= 75) {
+                        System.out.println("\nYou have been accepted as a practicum assistant.");
+                    } else {
+                        System.out.println("\nYou failed! Don't give up!");
+                        System.out.println("You failed because your interview score was less than 75.");
+                    }
+            } else {
+                System.out.println("\nYou failed!");
+                System.out.println(
+                    "Your Programming Fundamentals score is less than 80,"
+                    + "and you do not hold a programming competency certificate."
+                );
+            }
+        } else {
+            System.out.println("\nYou failed!");
+            
+            if (!studentStatus.equalsIgnoreCase("active")
+            && subjectSanctions.equalsIgnoreCase("yes")) {
+                System.out.println("You are inactive and currently subject to an academic sanction.");
+            } else if (!studentStatus.equalsIgnoreCase("active")) {
+                System.out.println("Your student status is inactive.");
+            } else {
+                System.out.println("You are currently subject to academic sanctions.");
+            }
+        }
+
+        sc.close();
+
+    }
+}
+```
+
+**Result:**
+
+![Assignment 2 Result](Assignment-2-result.png.png)
