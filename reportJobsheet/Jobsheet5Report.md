@@ -8,7 +8,7 @@ GitHub: https://github.com/davinategar
 
 ## Experiment 1:
 
-![Experiment 1 Result](img/Experiment-1-Result.png.png)
+![Experiment 1 Result](Experiment-1-Result.png.png)
 
 ## Answer:
 
@@ -51,4 +51,39 @@ First, the program asks whether the student has cleared all penalties.
 
      the program states that the student has not reached the required 8 sessions with supervisor 1.
    * **Step 5:** Otherwise, the sessions with supervisor 2 must be below 4, so the program states that the student has not reached the required 4 sessions with supervisor 2.
-   * **Step 6:** If the student answers "no" to the penalty-clearance question, the program immediately displays that the student still has an outstanding penalty. The guidance session requirements are not considered.
+   * **Step 6:** If the student answers "no" to the penalty-clearance question, the program immediately displays that the  student still has an outstanding penalty. The guidance session requirements are not considered.
+
+## Experiment 2:
+
+![Experiment 2 Result](Experiment-2-result.png.png)
+
+| Test | isStudent | isLecturer | isBlocked | Expected Output |
+|------|-----------|------------|-----------|-----------------|
+| 1 | true | false | false | WiFi access granted |
+| 2 | false | true | false | WiFi access granted |
+| 3 | true | false | true | WiFi access denied |
+| 4 | false | false | false | WiFi access denied |
+
+## Answer:
+
+**1. Explain the function of the ||, &&, and ! operators.**
+* `||` (OR) means at least one condition must be true.
+* `&&` (AND) means all conditions must be true.
+* `!` (NOT) reverses a boolean value. `!isBlocked` means the account is not blocked.
+
+**2. Why can a lecturer still get access when isStudent = false?**
+
+A lecturer can still get access when the condition uses `||` because only one condition needs to be true. If `isStudent` is false but `isLecturer` is true, the OR condition is still true, as long as the account is not blocked.
+
+**3. Change || to &&. What happens?**
+
+Test 1 and Test 2 will be denied access because `&&` requires both `isStudent` and `isLecturer` 
+
+**4.  When does isLecturer not need to be evaluated?**
+
+In `isStudent || isLecturer`, if `isStudent` is already true, `isLecturer` does not need to be evaluated because the OR condition is already true. This is called short-circuit evaluation.
+
+**5. When does !isBlocked not need to be evaluated?**
+
+In `(isStudent || isLecturer) && !isBlocked`, if `isStudent || isLecturer` is false, `!isBlocked` does not need to be evaluated because the entire AND condition will already be false.
+
