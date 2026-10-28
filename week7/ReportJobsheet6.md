@@ -184,3 +184,15 @@ public class CaseStudy2_17 {
 
 ### 5.2 Output Screenshot
 
+![studicase 2 result](studicase-2-result.png)
+
+### 5.3 Add to GitHub
+
+1. Create a file named StudiKasus2<NoPresensi>.java inside the same repository.
+2. Make at least 2 commits with clear commit messages, for example after finishing the competition branch ("SK2: competition branch") and after finishing the PKM and Other branches ("SK2: PKM and other branches").
+3. Push your code once it is finished.
+
+![studicase 2 gitpush result](studicase-2-gitpush-result.png)
+
+## 6. EXPERIMENT 4: Cross-testing a Classmate’s Program
+
