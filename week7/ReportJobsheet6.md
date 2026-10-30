@@ -196,3 +196,6 @@ public class CaseStudy2_17 {
 
 ## 6. EXPERIMENT 4: Cross-testing a Classmate’s Program
 
+### 6.1 Result 
+
+![collab result](collab-result.png)
